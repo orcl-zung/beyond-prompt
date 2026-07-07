@@ -33,8 +33,29 @@ export default defineConfig({
     sidebar: {
       '/matt-skills/': [
         {
-          text: 'Matt Skills',
-          items: [{ text: '总览', link: '/matt-skills/' }],
+          text: '认识 Matt Skills',
+          items: [
+            { text: '总览', link: '/matt-skills/' },
+            { text: '安装与项目配置', link: '/matt-skills/getting-started' },
+            { text: '两种 Skill 调用模型', link: '/matt-skills/invocation-model' },
+            { text: '选择正确的工作流', link: '/matt-skills/choosing-a-flow' },
+          ],
+        },
+        {
+          text: 'Idea to Ship',
+          items: [
+            { text: '对齐与领域语言', link: '/matt-skills/clarify-and-model' },
+            { text: '深模块与代码库健康', link: '/matt-skills/deep-modules' },
+            { text: '原型与研究支线', link: '/matt-skills/prototyping' },
+            { text: 'Implement 与 TDD', link: '/matt-skills/tdd' },
+          ],
+        },
+        {
+          text: '反馈与交付',
+          items: [
+            { text: '诊断与双轴审查', link: '/matt-skills/diagnosing-bugs' },
+            { text: 'PRD、Issues、Triage 与 Handoff', link: '/matt-skills/delivery' },
+          ],
         },
       ],
       '/addy-agent-skills/': [
@@ -64,7 +85,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/YOUR_GITHUB_USERNAME/beyond-prompt' },
+      { icon: 'github', link: 'https://github.com/orcl-zung/beyond-prompt' },
     ],
 
     search: { provider: 'local' },

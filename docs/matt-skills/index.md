@@ -1,44 +1,75 @@
 # Matt Skills 总览
 
-Matt Skills 是一组面向软件工程 Agent 的可复用工作方法。它们不只告诉模型“做什么”，还规定如何理解问题、收集证据、与人协作，并把任务推进到可验证的结果。
+Matt Skills 是 Matt Pocock 在真实工程工作中使用的一组 Agent Skills。它不试图接管整个开发过程，而是提供小型、可改造、可组合的工程动作，让人继续掌握流程和判断权。
 
-## 核心理念
+本手册基于官方仓库 2026-07-07 的版本（commit `8515a08`）重构。
 
-- **技能是工作流，不是提示词片段。** 每个 Skill 都应有明确触发条件、输入、步骤与完成标准。
-- **先形成共同语言。** 在复杂实现之前，先澄清领域术语、约束与关键决策。
-- **让问题逐步变清楚。** 通过诊断、访谈和原型降低不确定性，再投入正式实现。
-- **以验证收尾。** 代码、文档和决策都应留下可检查的结果，而不是停在建议阶段。
+> 官方项目：[mattpocock/skills](https://github.com/mattpocock/skills)
 
-## 技能地图
+## 为什么存在
 
-| 类别 | 典型技能 | 解决的问题 |
-| --- | --- | --- |
-| 探索与设计 | `grilling`、`domain-modeling`、`codebase-design` | 我们真正要解决什么？系统边界在哪里？ |
-| 实现与验证 | `tdd`、`diagnosing-bugs`、`prototype` | 如何快速获得反馈并证明实现有效？ |
-| 协作与交付 | `to-prd`、`to-issues`、`handoff`、`triage` | 如何把上下文转成团队可接手的工作？ |
-| 能力建设 | `teach`、`writing-great-skills` | 如何沉淀经验并持续改进 Agent？ |
+官方 README 将 Agent 工程中的失败归纳为四类。
 
-## 推荐工作流
+### 1. Agent 没做出你真正想要的东西
+
+需求通常不是一开始就完整存在。`grill-me` 和 `grill-with-docs` 通过一次一个问题的访谈，让人和 Agent 在动手前建立共同理解。
+
+### 2. Agent 解释得太长，代码也不使用项目语言
+
+缺少共享领域语言时，Agent 只能用通用词绕着表达。`domain-modeling` 把项目术语沉淀到 `CONTEXT.md`，让讨论、命名和代码导航共享同一个模型。
+
+### 3. 代码看起来合理，但实际不能工作
+
+Agent 的速度由反馈速度限制。`tdd`、`diagnosing-bugs` 和 `prototype` 为实现提供可运行信号，而不是依靠阅读代码后的自信。
+
+### 4. 开发速度提高，代码库更快变成泥团
+
+`codebase-design` 提供深模块词汇，`improve-codebase-architecture` 主动寻找加深机会。目标不是一次性“大重构”，而是每天投资系统设计。
+
+## 核心设计
+
+- **Small**：每个 Skill 解决一个清晰问题。
+- **Composable**：用户调用的 Skill 可以组合模型调用的纪律 Skill。
+- **Adaptable**：它们是可修改的工程工具，不是不可质疑的框架。
+- **Feedback-driven**：完成必须有测试、运行或审查证据。
+- **Human-controlled**：关键分支和取舍仍由人决定。
+
+## 主流程
 
 ```text
-模糊想法
-  -> grilling / domain-modeling
-  -> codebase-design / prototype
-  -> to-prd / to-issues
-  -> tdd / diagnosing-bugs
-  -> handoff / teach
+setup-matt-pocock-skills（每个仓库一次）
+  -> grill-with-docs
+  -> 必要时 handoff -> prototype / research -> handoff 回来
+  -> 小任务：implement
+  -> 大任务：to-prd -> to-issues -> 每个 Issue 独立 implement
+  -> implement 内部：tdd -> code-review -> commit
 ```
 
-这不是固定流水线。小任务可以直接进入实现；风险越高、参与者越多，越值得显式使用前面的澄清与设计技能。
+还有两条常见入口：
 
-## 一个好 Skill 的结构
+```text
+外部 Issue / PR 堆积 -> triage -> implement
+困难 Bug -> diagnosing-bugs -> 必要时 improve-codebase-architecture
+```
 
-1. **触发条件**：什么情况下应该使用它。
-2. **目标状态**：执行结束时，什么必须已经成立。
-3. **操作流程**：按什么顺序读取信息、调用工具和产生结果。
-4. **安全边界**：哪些操作需要确认，哪些信息不能假设。
-5. **验证方式**：如何判断工作不是“看起来完成”，而是真的完成。
+## Skill 地图
 
-## 下一步
+| 角色 | 用户调用 | 模型调用 |
+| --- | --- | --- |
+| 编排 | `ask-matt`、`grill-with-docs`、`implement`、`to-prd`、`to-issues`、`triage` | 由编排 Skill 组合下层纪律 |
+| 探索 | `grill-me`、`handoff` | `grilling`、`prototype`、`research` |
+| 领域与架构 | `improve-codebase-architecture` | `domain-modeling`、`codebase-design` |
+| 反馈 | 可直接请求 `tdd`、`code-review` | `tdd`、`diagnosing-bugs`、`code-review` |
+| 学习与创作 | `teach`、`writing-great-skills` | 由对应 Skill 管理自己的工作空间 |
 
-后续章节将逐个拆解这些 Skills，记录适用场景、组合方式、常见失败模式与实践案例。
+## 阅读路径
+
+1. [安装与项目配置](./getting-started.md)
+2. [两种 Skill 调用模型](./invocation-model.md)
+3. [选择正确的工作流](./choosing-a-flow.md)
+4. [对齐与领域语言](./clarify-and-model.md)
+5. [深模块与代码库健康](./deep-modules.md)
+6. [原型与研究支线](./prototyping.md)
+7. [Implement 与 TDD](./tdd.md)
+8. [诊断与双轴审查](./diagnosing-bugs.md)
+9. [PRD、Issues、Triage 与 Handoff](./delivery.md)
