@@ -60,8 +60,22 @@ export default defineConfig({
       ],
       '/addy-agent-skills/': [
         {
-          text: 'Addy Agent Skills',
-          items: [{ text: '总览', link: '/addy-agent-skills/' }],
+          text: '认识 Addy Agent Skills',
+          items: [
+            { text: '总览', link: '/addy-agent-skills/' },
+            { text: '安装与 Skill 结构', link: '/addy-agent-skills/getting-started' },
+            { text: '运行原则与技能路由', link: '/addy-agent-skills/operating-model' },
+          ],
+        },
+        {
+          text: '工程生命周期',
+          items: [
+            { text: 'Define：从想法到规格', link: '/addy-agent-skills/define' },
+            { text: 'Plan：拆成可验证任务', link: '/addy-agent-skills/plan' },
+            { text: 'Build：增量实现', link: '/addy-agent-skills/build' },
+            { text: 'Verify & Review：证明与审查', link: '/addy-agent-skills/verify-and-review' },
+            { text: 'Ship：安全发布', link: '/addy-agent-skills/ship' },
+          ],
         },
       ],
       '/claude-code/': [
