@@ -9,6 +9,7 @@ export default defineConfig({
   lastUpdated: true,
 
   head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/beyond-prompt/favicon.svg' }],
     ['meta', { name: 'theme-color', content: '#2563eb' }],
   ],
 
