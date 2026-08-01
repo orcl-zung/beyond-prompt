@@ -179,6 +179,14 @@
   border-color: var(--bp-coral);
 }
 
+.skill-card--java:hover {
+  border-color: var(--bp-green);
+}
+
+.skill-card--frontend:hover {
+  border-color: var(--bp-blue);
+}
+
 .skill-index {
   justify-self: end;
   color: var(--vp-c-text-3);
@@ -195,6 +203,14 @@
 
 .skill-card--addy .skill-label {
   color: var(--bp-coral);
+}
+
+.skill-card--java .skill-label {
+  color: var(--bp-green);
+}
+
+.skill-card--frontend .skill-label {
+  color: var(--bp-blue);
 }
 
 .skill-card h3 {

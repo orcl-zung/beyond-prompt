@@ -32,6 +32,14 @@ Claude Code 可以使用官方仓库提供的插件清单：
 
 ## Codex 与其他 Agent
 
+Codex CLI `0.122+` 可以直接安装官方插件：
+
+```bash
+codex plugin marketplace add addyosmani/agent-skills
+```
+
+安装后在对话中输入 `@spec-driven-development` 这类名称直接调用，也可以描述任务，让 Codex 根据 Skill 的触发描述自动选择。
+
 对可以读取 `SKILL.md` 的 Agent，Skills 本质上是可移植指令包。安装后应确认：
 
 1. Agent 能看到每个 Skill 的名称与描述。
@@ -92,4 +100,4 @@ Agent 往往知道规则，却会以“改动很小”“稍后再补”“这�
 
 预期行为是自动选择 `code-review-and-quality`，按五轴审查，而不是直接给一段泛化建议。
 
-下一章解释所有 Skills 共享的[运行原则与路由方式](./operating-model.md)。
+接下来可以打开 [24 个 Skills 逐项使用手册](./skill-reference.md) 复制具体调用示例，或继续理解所有 Skills 共享的[运行原则与路由方式](./operating-model.md)。

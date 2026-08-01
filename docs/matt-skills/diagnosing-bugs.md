@@ -53,7 +53,7 @@ git diff <fixed-point>...HEAD
 
 ### Spec
 
-改动是否忠实实现了来源 Issue、PRD 或 Spec，包括验收标准与明确非目标。
+改动是否忠实实现了来源 Issue、Ticket 或 Spec，包括验收标准与明确非目标。
 
 两轴由平行、隔离上下文的审查者执行，再并列汇总。这样 Standards 审查不会因为知道产品意图而放宽结构问题，Spec 审查也不会被风格偏好带偏。
 
@@ -67,4 +67,4 @@ git diff <fixed-point>...HEAD
 
 `implement` 在完整测试后自动进入这一步。完成审查和修复后，再提交当前分支。
 
-最后一章说明多会话工作如何通过 [PRD、Issues、Triage 与 Handoff](./delivery.md) 保持可接手。
+最后一章说明多会话工作如何通过 [Spec、Tickets、Triage 与 Handoff](./delivery.md) 保持可接手。

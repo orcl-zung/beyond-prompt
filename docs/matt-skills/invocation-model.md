@@ -14,8 +14,8 @@ disable-model-invocation: true
 
 - `ask-matt`：选择工作流。
 - `grill-with-docs`：启动带领域文档的访谈。
-- `implement`：根据 PRD 或 Issue 完成实现、审查和提交。
-- `to-prd`、`to-issues`：写入 Issue Tracker。
+- `implement`：根据 Spec 或 Ticket 完成实现、审查和提交。
+- `to-spec`、`to-tickets`、`wayfinder`：写入 Issue Tracker。
 - `triage`：改变外部 Issue / PR 状态。
 - `handoff`：结束当前会话并为新会话准备上下文。
 

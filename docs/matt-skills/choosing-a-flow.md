@@ -8,7 +8,7 @@
 grill-with-docs
   -> 需要可运行答案？handoff -> prototype -> handoff 回来
   -> 单会话任务？implement
-  -> 多会话任务？to-prd -> to-issues -> 每个 Issue 新会话 implement
+  -> 多会话任务？to-spec -> to-tickets -> 每个 Ticket 新会话 implement
 ```
 
 ### 为什么从 Grilling 开始
@@ -17,14 +17,14 @@ grill-with-docs
 
 ### 单会话还是多会话
 
-若范围清晰、能在当前上下文可靠完成，直接 `/implement`。若需要多个独立执行会话，先 `/to-prd` 固化决定，再 `/to-issues` 拆成独立切片。
+若范围清晰、能在当前上下文可靠完成，直接 `/implement`。若需要多个独立执行会话，先 `/to-spec` 固化决定，再 `/to-tickets` 拆成独立切片。
 
-每个 Issue 使用新会话，只携带 PRD 与当前 Issue，减少其他切片污染。
+每个 Ticket 使用新会话，只携带 Spec 与当前 Ticket，减少其他切片污染。
 
 ### Implement 的内部闭环
 
 ```text
-issue / PRD
+Ticket / Spec
   -> tdd：逐个 Red-Green 切片
   -> 定期类型检查与单测
   -> 最后完整测试
@@ -40,7 +40,7 @@ issue / PRD
 triage -> ready-for-agent -> implement
 ```
 
-`triage` 只处理外部进入的原始 Issue 或 PR。由 `to-issues` 创建的切片已经准备就绪，不应重复 Triage。
+`triage` 只处理外部进入的原始 Issue 或 PR。由 `to-tickets` 创建的切片已经准备就绪，不应重复 Triage。
 
 ### 困难 Bug
 
@@ -65,10 +65,11 @@ diagnosing-bugs -> regression test -> fix
 | 学习一个概念并跨会话保存进度 | `teach` |
 | 编写或改进 Skill | `writing-great-skills` |
 | 解决正在进行的 Merge / Rebase 冲突 | `resolving-merge-conflicts` |
+| 计划一个跨越多个会话且仍充满未知的大项目 | `wayfinder` |
 
 ## 上下文卫生
 
-从 Grilling 到 PRD 和 Issues 尽量保持连续上下文，因为这些阶段共享刚形成的理解。接近模型的有效推理区上限时使用 `handoff`，不要在阶段中间被动压缩。
+从 Grilling 到 Spec 和 Tickets 尽量保持连续上下文，因为这些阶段共享刚形成的理解。接近模型的有效推理区上限时使用 `handoff`，不要在阶段中间被动压缩。
 
 实现阶段则反过来：每个独立 Issue 使用新上下文，让 Agent 只关注当前切片。
 

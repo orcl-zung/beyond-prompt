@@ -4,9 +4,10 @@ const zhSidebar = {
   '/matt-skills/': [
     {
       text: '认识 Matt Skills',
-      items: [
-        { text: '总览', link: '/matt-skills/' },
-        { text: '安装与项目配置', link: '/matt-skills/getting-started' },
+          items: [
+            { text: '总览', link: '/matt-skills/' },
+            { text: '22 个 Skills 逐项使用', link: '/matt-skills/skill-reference' },
+            { text: '安装与项目配置', link: '/matt-skills/getting-started' },
         { text: '两种 Skill 调用模型', link: '/matt-skills/invocation-model' },
         { text: '选择正确的工作流', link: '/matt-skills/choosing-a-flow' },
       ],
@@ -24,16 +25,17 @@ const zhSidebar = {
       text: '反馈与交付',
       items: [
         { text: '诊断与双轴审查', link: '/matt-skills/diagnosing-bugs' },
-        { text: 'PRD、Issues、Triage 与 Handoff', link: '/matt-skills/delivery' },
+            { text: 'Spec、Tickets、Triage 与 Handoff', link: '/matt-skills/delivery' },
       ],
     },
   ],
   '/addy-agent-skills/': [
     {
       text: '认识 Addy Agent Skills',
-      items: [
-        { text: '总览', link: '/addy-agent-skills/' },
-        { text: '安装与 Skill 结构', link: '/addy-agent-skills/getting-started' },
+          items: [
+            { text: '总览', link: '/addy-agent-skills/' },
+            { text: '24 个 Skills 逐项使用', link: '/addy-agent-skills/skill-reference' },
+            { text: '安装与 Skill 结构', link: '/addy-agent-skills/getting-started' },
         { text: '运行原则与技能路由', link: '/addy-agent-skills/operating-model' },
       ],
     },
@@ -45,6 +47,24 @@ const zhSidebar = {
         { text: 'Build：增量实现', link: '/addy-agent-skills/build' },
         { text: 'Verify & Review：证明与审查', link: '/addy-agent-skills/verify-and-review' },
         { text: 'Ship：安全发布', link: '/addy-agent-skills/ship' },
+      ],
+    },
+  ],
+  '/java-skills/': [
+    {
+      text: 'Java Skills',
+      items: [
+        { text: '总览', link: '/java-skills/' },
+        { text: '5 个 Skills 逐项使用', link: '/java-skills/skill-reference' },
+      ],
+    },
+  ],
+  '/frontend-skills/': [
+    {
+      text: 'Frontend Skills',
+      items: [
+        { text: '总览', link: '/frontend-skills/' },
+        { text: '9 个 Skills 逐项使用', link: '/frontend-skills/skill-reference' },
       ],
     },
   ],
@@ -61,6 +81,12 @@ const enSidebar = {
   ],
   '/en/addy-agent-skills/': [
     { text: 'Addy Agent Skills', items: [{ text: 'Overview', link: '/en/addy-agent-skills/' }] },
+  ],
+  '/en/java-skills/': [
+    { text: 'Java Skills', items: [{ text: 'Overview', link: '/en/java-skills/' }] },
+  ],
+  '/en/frontend-skills/': [
+    { text: 'Frontend Skills', items: [{ text: 'Overview', link: '/en/frontend-skills/' }] },
   ],
   '/en/claude-code/': [
     { text: 'Claude Code', items: [{ text: 'Overview', link: '/en/claude-code/' }] },
@@ -114,6 +140,8 @@ export default defineConfig({
             items: [
               { text: 'Matt Skills', link: '/matt-skills/' },
               { text: 'Addy Agent Skills', link: '/addy-agent-skills/' },
+              { text: 'Java Skills', link: '/java-skills/' },
+              { text: 'Frontend Skills', link: '/frontend-skills/' },
             ],
           },
           { text: 'Claude Code', link: '/claude-code/' },
@@ -145,6 +173,8 @@ export default defineConfig({
             items: [
               { text: 'Matt Skills', link: '/en/matt-skills/' },
               { text: 'Addy Agent Skills', link: '/en/addy-agent-skills/' },
+              { text: 'Java Skills', link: '/en/java-skills/' },
+              { text: 'Frontend Skills', link: '/en/frontend-skills/' },
             ],
           },
           { text: 'Claude Code', link: '/en/claude-code/' },

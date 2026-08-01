@@ -2,7 +2,7 @@
 
 Addy Agent Skills 是 Addy Osmani 维护的一套生产级软件工程工作流。它将资深工程师在需求、实现、验证、审查和发布中的方法，封装为 AI Coding Agent 可以发现并执行的 Skills。
 
-本手册基于官方仓库 2026-07-06 的版本整理。该版本包含 **24 个 Skills**：23 个覆盖工程生命周期，另有 `using-agent-skills` 元技能负责发现和组合。
+本手册基于官方仓库 2026-07-26 的版本（commit [`7829ffd`](https://github.com/addyosmani/agent-skills/tree/7829ffd90d973b6325f5f12f1b1226dcace74443)）整理。该版本包含 **24 个 Skills**：23 个覆盖工程生命周期，另有 `using-agent-skills` 元技能负责发现和组合。
 
 > 官方项目：[addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)
 
@@ -61,9 +61,10 @@ debugging-and-error-recovery
 ## 阅读路径
 
 1. [安装与 Skill 结构](./getting-started.md)
-2. [运行原则与技能路由](./operating-model.md)
-3. [Define：从想法到规格](./define.md)
-4. [Plan：拆成可验证任务](./plan.md)
-5. [Build：增量实现](./build.md)
-6. [Verify & Review：证明与审查](./verify-and-review.md)
-7. [Ship：安全发布](./ship.md)
+2. [24 个 Skills 逐项使用手册](./skill-reference.md)
+3. [运行原则与技能路由](./operating-model.md)
+4. [Define：从想法到规格](./define.md)
+5. [Plan：拆成可验证任务](./plan.md)
+6. [Build：增量实现](./build.md)
+7. [Verify & Review：证明与审查](./verify-and-review.md)
+8. [Ship：安全发布](./ship.md)

@@ -2,7 +2,7 @@
 
 Matt Skills 是 Matt Pocock 在真实工程工作中使用的一组 Agent Skills。它不试图接管整个开发过程，而是提供小型、可改造、可组合的工程动作，让人继续掌握流程和判断权。
 
-本手册基于官方仓库 2026-07-07 的版本（commit `8515a08`）重构。
+本手册基于官方仓库 2026-07-28 的稳定目录（commit [`2ab9580`](https://github.com/mattpocock/skills/tree/2ab958093e83e0ec752e6c1c5932da465bf23e0c)）整理，覆盖 17 个 Engineering Skills 与 5 个 Productivity Skills。
 
 > 官方项目：[mattpocock/skills](https://github.com/mattpocock/skills)
 
@@ -41,7 +41,7 @@ setup-matt-pocock-skills（每个仓库一次）
   -> grill-with-docs
   -> 必要时 handoff -> prototype / research -> handoff 回来
   -> 小任务：implement
-  -> 大任务：to-prd -> to-issues -> 每个 Issue 独立 implement
+  -> 大任务：to-spec -> to-tickets -> 每个 Ticket 独立 implement
   -> implement 内部：tdd -> code-review -> commit
 ```
 
@@ -56,7 +56,7 @@ setup-matt-pocock-skills（每个仓库一次）
 
 | 角色 | 用户调用 | 模型调用 |
 | --- | --- | --- |
-| 编排 | `ask-matt`、`grill-with-docs`、`implement`、`to-prd`、`to-issues`、`triage` | 由编排 Skill 组合下层纪律 |
+| 编排 | `ask-matt`、`grill-with-docs`、`implement`、`to-spec`、`to-tickets`、`wayfinder`、`triage` | 由编排 Skill 组合下层纪律 |
 | 探索 | `grill-me`、`handoff` | `grilling`、`prototype`、`research` |
 | 领域与架构 | `improve-codebase-architecture` | `domain-modeling`、`codebase-design` |
 | 反馈 | 可直接请求 `tdd`、`code-review` | `tdd`、`diagnosing-bugs`、`code-review` |
@@ -65,11 +65,12 @@ setup-matt-pocock-skills（每个仓库一次）
 ## 阅读路径
 
 1. [安装与项目配置](./getting-started.md)
-2. [两种 Skill 调用模型](./invocation-model.md)
-3. [选择正确的工作流](./choosing-a-flow.md)
-4. [对齐与领域语言](./clarify-and-model.md)
-5. [深模块与代码库健康](./deep-modules.md)
-6. [原型与研究支线](./prototyping.md)
-7. [Implement 与 TDD](./tdd.md)
-8. [诊断与双轴审查](./diagnosing-bugs.md)
-9. [PRD、Issues、Triage 与 Handoff](./delivery.md)
+2. [22 个 Skills 逐项使用手册](./skill-reference.md)
+3. [两种 Skill 调用模型](./invocation-model.md)
+4. [选择正确的工作流](./choosing-a-flow.md)
+5. [对齐与领域语言](./clarify-and-model.md)
+6. [深模块与代码库健康](./deep-modules.md)
+7. [原型与研究支线](./prototyping.md)
+8. [Implement 与 TDD](./tdd.md)
+9. [诊断与双轴审查](./diagnosing-bugs.md)
+10. [Spec、Tickets、Triage 与 Handoff](./delivery.md)

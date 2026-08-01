@@ -4,6 +4,14 @@ Matt Skills 可以通过 skills.sh 安装到多种 Coding Agent。安装只是�
 
 ## 安装
 
+Claude Code 可安装官方 Marketplace 中的完整只读插件，并自动接收更新：
+
+```text
+claude plugins install mattpocock-skills
+```
+
+Codex 和其他支持 Agent Skills 的工具可使用开放 CLI，选择需要的 Skills，并保留本地修改能力：
+
 ```bash
 npx skills@latest add mattpocock/skills
 ```
@@ -24,7 +32,7 @@ npx skills@latest add mattpocock/skills
 
 ### Issue Tracker
 
-Issues 可以位于 GitHub、GitLab、本地 Markdown 或自定义系统。`to-prd`、`to-issues`、`triage` 和 `code-review` 需要知道如何读取与写入。
+Tickets 可以位于 GitHub、GitLab、本地 Markdown 或自定义系统。`to-spec`、`to-tickets`、`wayfinder`、`triage` 和 `code-review` 需要知道如何读取与写入。
 
 对于 GitHub 或 GitLab，还会确认外部 PR 是否也属于 Triage 请求面。
 
@@ -72,6 +80,8 @@ tdd
 code-review
 ```
 
-随后按项目需要加入 `to-prd`、`to-issues`、`triage`、`diagnosing-bugs` 和架构 Skills。
+随后按项目需要加入 `to-spec`、`to-tickets`、`wayfinder`、`triage`、`diagnosing-bugs` 和架构 Skills。
+
+安装完成后，可从 [22 个 Skills 逐项使用手册](./skill-reference.md) 直接复制调用示例。
 
 下一章先理解一个关键区别：[两种 Skill 调用模型](./invocation-model.md)。

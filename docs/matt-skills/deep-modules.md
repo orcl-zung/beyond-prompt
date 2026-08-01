@@ -50,7 +50,7 @@ Interface 应同时是调用面与测试面。如果测试必须越过公开 Int
   -> 选择 deepening opportunity
   -> grill-with-docs
   -> 必要时设计多个 Interface 方案
-  -> to-prd / to-issues
+  -> to-spec / to-tickets
   -> implement
 ```
 

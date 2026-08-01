@@ -11,13 +11,17 @@ const content = computed(() => {
       introTitle: 'Move from a single instruction to a reusable way of working.',
       introText:
         'A prompt solves one conversation. A system solves a class of problems. This guide explores how skills are invoked, how tasks move forward, and how context helps an agent make more reliable decisions.',
-      skillsTitle: 'Two complementary skill systems',
+      skillsTitle: 'Four practical starting points',
       skillsLead:
-        'Choose the operating system that fits the task, from deep engineering practice to end-to-end delivery.',
+        'Start with the technical domain or operating system that matches the work in front of you.',
       mattDescription:
         'Go deeper on clarification, domain modeling, prototypes, TDD, diagnosis, and codebase design.',
       addyDescription:
         'Build a complete engineering loop around Define, Plan, Build, Verify, and Ship.',
+      javaDescription:
+        'Use Spring Boot, JUnit, Javadoc, MCP, and GraalVM guidance without treating one template as timeless.',
+      frontendDescription:
+        'Build and verify Vue, React, and current Next.js interfaces with design, performance, and testing discipline.',
       linkLabel: 'Open the guide',
       methodTitle: 'Treat AI collaboration as one continuous chain',
       steps: [
@@ -28,6 +32,8 @@ const content = computed(() => {
       ],
       mattLink: './matt-skills/',
       addyLink: './addy-agent-skills/',
+      javaLink: './java-skills/',
+      frontendLink: './frontend-skills/',
     }
   }
 
@@ -35,10 +41,12 @@ const content = computed(() => {
     introTitle: '从一句指令，走向一套可复用的工作方式。',
     introText:
       '提示词解决一次对话，系统化的方法解决一类问题。这里关注技能如何被调用、任务如何被推进，以及上下文如何帮助 Agent 做出更可靠的判断。',
-    skillsTitle: '两套互补的 Agent Skills',
-    skillsLead: '从工程深度到交付全流程，选择更适合当前任务的工作系统。',
+    skillsTitle: '四个进入 AI Skills 的入口',
+    skillsLead: '先选择当前所处的技术域或工作系统，再把 Skill 变成项目里的可复用动作。',
     mattDescription: '深入需求澄清、领域建模、原型、TDD、诊断与代码库设计。',
     addyDescription: '围绕 Define、Plan、Build、Verify 与 Ship，建立完整的工程交付闭环。',
+    javaDescription: '围绕 Spring Boot、JUnit、Javadoc、MCP 与 GraalVM，建立 Java 的可靠反馈闭环。',
+    frontendDescription: '围绕 Vue、React 与当前 Next.js，兼顾设计、性能、组件边界与真实浏览器验证。',
     linkLabel: '进入手册',
     methodTitle: '把 AI 协作看成一条连续链路',
     steps: [
@@ -49,6 +57,8 @@ const content = computed(() => {
     ],
     mattLink: './matt-skills/',
     addyLink: './addy-agent-skills/',
+    javaLink: './java-skills/',
+    frontendLink: './frontend-skills/',
   }
 })
 </script>
@@ -92,6 +102,32 @@ const content = computed(() => {
             <p class="skill-label">DELIVERY SYSTEM</p>
             <h3>Addy Agent Skills</h3>
             <p>{{ content.addyDescription }}</p>
+          </div>
+          <span class="skill-link">
+            {{ content.linkLabel }}
+            <span aria-hidden="true">→</span>
+          </span>
+        </a>
+
+        <a class="skill-card skill-card--java" :href="content.javaLink">
+          <span class="skill-index">03</span>
+          <div>
+            <p class="skill-label">JAVA ENGINEERING</p>
+            <h3>Java Skills</h3>
+            <p>{{ content.javaDescription }}</p>
+          </div>
+          <span class="skill-link">
+            {{ content.linkLabel }}
+            <span aria-hidden="true">→</span>
+          </span>
+        </a>
+
+        <a class="skill-card skill-card--frontend" :href="content.frontendLink">
+          <span class="skill-index">04</span>
+          <div>
+            <p class="skill-label">FRONTEND PRACTICE</p>
+            <h3>Frontend Skills</h3>
+            <p>{{ content.frontendDescription }}</p>
           </div>
           <span class="skill-link">
             {{ content.linkLabel }}
