@@ -147,7 +147,7 @@
 
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -155,8 +155,8 @@
   position: relative;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  min-height: 320px;
-  padding: 28px;
+  min-height: 286px;
+  padding: 24px;
   border: 1px solid var(--vp-c-divider);
   border-radius: 8px;
   color: var(--vp-c-text-1);
@@ -171,21 +171,25 @@
   text-decoration: none;
 }
 
-.skill-card--matt:hover {
+.skill-card--product:hover {
   border-color: var(--bp-cyan);
 }
 
-.skill-card--addy:hover {
+.skill-card--design:hover {
   border-color: var(--bp-coral);
 }
 
-.skill-card--java:hover {
+.skill-card--frontend:hover {
   border-color: var(--bp-green);
 }
 
-.skill-card--frontend:hover {
+.skill-card--backend:hover {
   border-color: var(--bp-blue);
 }
+
+.skill-card--quality:hover { border-color: var(--bp-coral); }
+
+.skill-card--workflow:hover { border-color: var(--bp-cyan); }
 
 .skill-index {
   justify-self: end;
@@ -201,15 +205,16 @@
   font-weight: 700;
 }
 
-.skill-card--addy .skill-label {
+.skill-card--design .skill-label,
+.skill-card--quality .skill-label {
   color: var(--bp-coral);
 }
 
-.skill-card--java .skill-label {
+.skill-card--frontend .skill-label {
   color: var(--bp-green);
 }
 
-.skill-card--frontend .skill-label {
+.skill-card--backend .skill-label {
   color: var(--bp-blue);
 }
 
@@ -320,6 +325,10 @@
 
   .intro-grid h2 {
     font-size: 34px;
+  }
+
+  .skill-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .method-track {

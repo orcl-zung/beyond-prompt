@@ -3,18 +3,18 @@ layout: home
 
 hero:
   name: "Beyond Prompt"
-  text: "AI collaboration beyond prompting"
-  tagline: A practical field guide to AI skills, agent workflows, and context engineering.
+  text: "AI skills for the whole product team"
+  tagline: A practical field guide for product, design, engineering, and quality teams.
   image:
     src: /logo.svg
     alt: Beyond Prompt
   actions:
     - theme: brand
-      text: Explore Matt Skills
-      link: /en/matt-skills/
+      text: Start with product discovery
+      link: /en/product-skills/
     - theme: alt
-      text: Discover Addy Agent Skills
-      link: /en/addy-agent-skills/
+      text: See the team workflow
+      link: /en/team-workflow/
 ---
 
 <HomeContent locale="en" />

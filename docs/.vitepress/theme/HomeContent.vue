@@ -8,57 +8,53 @@ const props = defineProps<{
 const content = computed(() => {
   if (props.locale === 'en') {
     return {
-      introTitle: 'Move from a single instruction to a reusable way of working.',
+      introTitle: 'Give every product role a reusable way to work with AI.',
       introText:
-        'A prompt solves one conversation. A system solves a class of problems. This guide explores how skills are invoked, how tasks move forward, and how context helps an agent make more reliable decisions.',
-      skillsTitle: 'Four practical starting points',
+        'A prompt can help one person in one conversation. A shared system lets product, design, engineering, and quality work from the same evidence, handoffs, and standards.',
+      skillsTitle: 'Start from your role',
       skillsLead:
-        'Start with the technical domain or operating system that matches the work in front of you.',
-      mattDescription:
-        'Go deeper on clarification, domain modeling, prototypes, TDD, diagnosis, and codebase design.',
-      addyDescription:
-        'Build a complete engineering loop around Define, Plan, Build, Verify, and Ship.',
-      javaDescription:
-        'Use Spring Boot, JUnit, Javadoc, MCP, and GraalVM guidance without treating one template as timeless.',
-      frontendDescription:
-        'Build and verify Vue, React, and current Next.js interfaces with design, performance, and testing discipline.',
+        'Choose the work you own today. Each guide explains what to hand to an agent, what evidence to ask for, and where to go deeper.',
       linkLabel: 'Open the guide',
-      methodTitle: 'Treat AI collaboration as one continuous chain',
+      methodTitle: 'Keep the handoff visible from idea to release',
       steps: [
-        ['Skills', 'Package reusable methods and judgment.'],
-        ['Workflow', 'Move work through observable stages.'],
-        ['Context', 'Provide the right information at each step.'],
-        ['Cases', 'Learn from outcomes and retain the lessons.'],
+        ['Define', 'Turn a customer problem into a shared, testable brief.'],
+        ['Design', 'Make states, content, and constraints tangible before code.'],
+        ['Build', 'Implement against explicit contracts and project conventions.'],
+        ['Verify', 'Prove the experience and the release are ready to trust.'],
       ],
-      mattLink: './matt-skills/',
-      addyLink: './addy-agent-skills/',
-      javaLink: './java-skills/',
-      frontendLink: './frontend-skills/',
+      skills: [
+        { label: 'PRODUCT & DISCOVERY', title: 'Product & Discovery', description: 'Explore the problem, surface assumptions, and turn a fuzzy request into an outcome the team can agree on.', link: './product-skills/', tone: 'product' },
+        { label: 'UI/UX DESIGN', title: 'UI/UX Design', description: 'Shape interface direction, audit existing flows, and make interaction states concrete before implementation.', link: './design-skills/', tone: 'design' },
+        { label: 'FRONTEND ENGINEERING', title: 'Frontend Engineering', description: 'Build Vue, React, and Next.js interfaces with clear component boundaries and browser-level evidence.', link: './frontend-skills/', tone: 'frontend' },
+        { label: 'BACKEND & PLATFORM', title: 'Backend & Platform', description: 'Define reliable APIs, protect system boundaries, and make production behavior observable.', link: './backend-skills/', tone: 'backend' },
+        { label: 'TESTING & QUALITY', title: 'Testing & Quality', description: 'Design the right checks, find regressions early, and finish only after fresh verification.', link: './testing-skills/', tone: 'quality' },
+        { label: 'TEAM WORKFLOW', title: 'Team Workflow', description: 'Choose skills deliberately and keep decisions, context, reviews, and delivery legible across roles.', link: './team-workflow/', tone: 'workflow' },
+      ],
     }
   }
 
   return {
-    introTitle: '从一句指令，走向一套可复用的工作方式。',
+    introTitle: '为每个产研角色，配一套可复用的 AI 工作方式。',
     introText:
-      '提示词解决一次对话，系统化的方法解决一类问题。这里关注技能如何被调用、任务如何被推进，以及上下文如何帮助 Agent 做出更可靠的判断。',
-    skillsTitle: '四个进入 AI Skills 的入口',
-    skillsLead: '先选择当前所处的技术域或工作系统，再把 Skill 变成项目里的可复用动作。',
-    mattDescription: '深入需求澄清、领域建模、原型、TDD、诊断与代码库设计。',
-    addyDescription: '围绕 Define、Plan、Build、Verify 与 Ship，建立完整的工程交付闭环。',
-    javaDescription: '围绕 Spring Boot、JUnit、Javadoc、MCP 与 GraalVM，建立 Java 的可靠反馈闭环。',
-    frontendDescription: '围绕 Vue、React 与当前 Next.js，兼顾设计、性能、组件边界与真实浏览器验证。',
+      '提示词可以帮一个人完成一次对话；共享的方法，才能让产品、设计、开发和测试围绕同一份证据、交接和标准一起推进。',
+    skillsTitle: '从你的角色进入',
+    skillsLead: '选择你今天负责的工作。每一页都说明该给 Agent 什么上下文、该要什么证据，以及下一步去哪里深入。',
     linkLabel: '进入手册',
-    methodTitle: '把 AI 协作看成一条连续链路',
+    methodTitle: '让交接从想法到发布始终可见',
     steps: [
-      ['Skills', '封装可复用的方法与判断标准。'],
-      ['Workflow', '让任务沿着可观察的阶段推进。'],
-      ['Context', '为每一步提供恰到好处的信息。'],
-      ['Cases', '从真实结果中校正并沉淀经验。'],
+      ['定义', '把用户问题变成团队都能验证的目标。'],
+      ['设计', '在写代码前，让状态、内容和约束变得具体。'],
+      ['实现', '按明确契约与项目约定构建功能。'],
+      ['验证', '用新的证据证明体验和发布已经可靠。'],
     ],
-    mattLink: './matt-skills/',
-    addyLink: './addy-agent-skills/',
-    javaLink: './java-skills/',
-    frontendLink: './frontend-skills/',
+    skills: [
+      { label: 'PRODUCT & DISCOVERY', title: '产品与需求', description: '探索真实问题、暴露关键假设，把模糊诉求变成团队能共同确认的结果。', link: './product-skills/', tone: 'product' },
+      { label: 'UI/UX DESIGN', title: 'UI/UX 设计', description: '建立界面方向、审查已有流程，并在实现前把交互状态讲清楚。', link: './design-skills/', tone: 'design' },
+      { label: 'FRONTEND ENGINEERING', title: '前端工程', description: '用清晰的组件边界和真实浏览器证据，构建 Vue、React 与 Next.js 界面。', link: './frontend-skills/', tone: 'frontend' },
+      { label: 'BACKEND & PLATFORM', title: '后端与平台', description: '定义可靠 API、守住系统边界，并让线上行为可观察、可追溯。', link: './backend-skills/', tone: 'backend' },
+      { label: 'TESTING & QUALITY', title: '测试与质量', description: '设计正确的检查方式，及早发现回归，并在新鲜验证之后再完成交付。', link: './testing-skills/', tone: 'quality' },
+      { label: 'TEAM WORKFLOW', title: '研发协作', description: '有意识地选择 Skills，让决策、上下文、评审和交付在角色之间始终清楚。', link: './team-workflow/', tone: 'workflow' },
+    ],
   }
 })
 </script>
@@ -83,51 +79,18 @@ const content = computed(() => {
       </div>
 
       <div class="skill-grid">
-        <a class="skill-card skill-card--matt" :href="content.mattLink">
-          <span class="skill-index">01</span>
+        <a
+          v-for="(skill, index) in content.skills"
+          :key="skill.title"
+          class="skill-card"
+          :class="`skill-card--${skill.tone}`"
+          :href="skill.link"
+        >
+          <span class="skill-index">{{ String(index + 1).padStart(2, '0') }}</span>
           <div>
-            <p class="skill-label">ENGINEERING PRACTICE</p>
-            <h3>Matt Skills</h3>
-            <p>{{ content.mattDescription }}</p>
-          </div>
-          <span class="skill-link">
-            {{ content.linkLabel }}
-            <span aria-hidden="true">→</span>
-          </span>
-        </a>
-
-        <a class="skill-card skill-card--addy" :href="content.addyLink">
-          <span class="skill-index">02</span>
-          <div>
-            <p class="skill-label">DELIVERY SYSTEM</p>
-            <h3>Addy Agent Skills</h3>
-            <p>{{ content.addyDescription }}</p>
-          </div>
-          <span class="skill-link">
-            {{ content.linkLabel }}
-            <span aria-hidden="true">→</span>
-          </span>
-        </a>
-
-        <a class="skill-card skill-card--java" :href="content.javaLink">
-          <span class="skill-index">03</span>
-          <div>
-            <p class="skill-label">JAVA ENGINEERING</p>
-            <h3>Java Skills</h3>
-            <p>{{ content.javaDescription }}</p>
-          </div>
-          <span class="skill-link">
-            {{ content.linkLabel }}
-            <span aria-hidden="true">→</span>
-          </span>
-        </a>
-
-        <a class="skill-card skill-card--frontend" :href="content.frontendLink">
-          <span class="skill-index">04</span>
-          <div>
-            <p class="skill-label">FRONTEND PRACTICE</p>
-            <h3>Frontend Skills</h3>
-            <p>{{ content.frontendDescription }}</p>
+            <p class="skill-label">{{ skill.label }}</p>
+            <h3>{{ skill.title }}</h3>
+            <p>{{ skill.description }}</p>
           </div>
           <span class="skill-link">
             {{ content.linkLabel }}
